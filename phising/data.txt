@@ -1,0 +1,15 @@
+
+ 
+---- START --- 
+2022/11/25 05:02:04am GMT 
+IP Address: ::1
+Hostname: joemama
+Port Number: 49192
+User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36
+HTTP Referer: http://localhost/phising/index.html
+email:  bikasdjk@gamamam.com
+password:  fhioihwfoiiowefwef
+---- END --- 
+
+
+ 
