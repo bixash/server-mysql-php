@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         <div>
             <label for="">Faculty</label>
             <select name="faculty" default="">
-                <option value="" selected hidden></option>
+                <option value="#" selected hidden></option>
                 <option value="humanities">Humanities</option>
                 <option value="science">Science</option>
                 <option value="engineering">Engineering</option>
