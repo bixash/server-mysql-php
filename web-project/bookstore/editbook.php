@@ -5,7 +5,7 @@ include "session.php";
 
 session_start();
 
-$user_data = check_login($con);
+// $user_data = check_login($con);
 
 $id = $user_data['id'];
 
