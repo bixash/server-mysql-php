@@ -37,9 +37,7 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
     }
 
     if($error == 0) {
-
       
-
         $query = "update books set name='$name', username='$username', password='$password' where id = $id";
 
         mysqli_query($con, $query);
