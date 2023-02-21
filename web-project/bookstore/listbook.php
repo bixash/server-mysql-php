@@ -79,8 +79,7 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
                         $price = $row['price'];
                         // <td>' . $id . '</td>
                         echo ' <tr>
-
-                                
+                        
                                 <td>' . $title . '</td>
                                 <td>' . $author . '</td>
                                 <td>' . $publisher . '</td>
@@ -103,12 +102,9 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
                 <button><a href="addbook.php">New book</a></button>
             </div>
             
-
         </table>
 
-
     </form>
-
 
 </body>
 
