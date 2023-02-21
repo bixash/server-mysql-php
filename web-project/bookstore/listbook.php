@@ -51,10 +51,10 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
                     <th>Title</th>
                     <th>Author</th>
                     <th>Publisher</th>
-                    <th>Date</th>
-                    <th>ISBN no</th>
+                    <th>Date Published</th>
+                    <th>ISBN</th>
                     <th>Edition</th>
-                    <th>No of Pages</th>
+                    <th>No. of Pages</th>
                     <th>Price</th>
                     <!-- <th>Operations</th> -->
                 </tr>
