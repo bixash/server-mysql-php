@@ -1,106 +1,120 @@
+<!-- 9. Write a server side script to modify books data stored form above question no 7. -->
+
 <?php
 
 include "config.php";
-include "session.php";
 
-session_start();
+$errTitle = $errPublisher = $errDate = $errIsbn = $errEdition = $errPages = $errInfo= "";
+$id = $_GET['update_id'];
 
-// $user_data = check_login($con);
+$query = "SELECT * FROM `books` where id = $id";
+$result = mysqli_query($con, $query);
 
-$id = $user_data['id'];
+$row = mysqli_fetch_assoc($result);
 
-$errUsername = $errPassword = $errInfo = $errName ="";
+$title = $row['title'];
+$author = $row['author'];
+$publisher = $row['publisher'];
+$date = $row['date'];
+$isbn = $row['isbn'];
+$pages = $row['pages'];
+$edition = $row['edition'];
+$price = $row['price'];
+
 
 if($_SERVER['REQUEST_METHOD']== "POST") {
 
-    $name = $_POST['name'];
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+    $title = $_POST['title'];
+    $author = $_POST['author'];
+    $publisher = $_POST['publisher'];
+    $date = $_POST['date'];
+    $isbn = $_POST['isbn'];
+    $edition = $_POST['edition'];
+    $pages = $_POST['pages'];
+    $price = $_POST['price'];
 
-    $errUsername = $errPassword = $errInfo = $errName ="";
-    $error = 0;
-    // $errUsername = $errName = $errPassword = "";
 
-    if (empty($name)) {
-        $errName = "Name is required!";
-        $error++;
-    }
-        
-    if (empty($username)) {
-        $errUsername = "Username is required!";
-        $error++;
-    }
+    $query = "update books set title='$title', author='$author', publisher= '$publisher', date='$date', isbn='$isbn', edition='$edition', pages='$pages', price='$price' where id = '$id'";
 
-    if (empty($password)) {
-        $errPassword = "Password is required!";
-        $error++;
-    }
+    $result = mysqli_query($con, $query);
 
-    if($error == 0) {
-      
-        $query = "update books set name='$name', username='$username', password='$password' where id = $id";
-
-        mysqli_query($con, $query);
-
-        header("Location: dash.php");
-        die;
-    } 
-    else
-        $errInfo = "Please enter valid info!!";
+    if ($result) {
+        header("Location: listbook.php");
+    } else
+        $errInfo = "error occurred!!";
+   
+        // $errInfo = "Please enter valid info!!";
 
 }
 
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>Login</title>
+    <link rel="stylesheet" href="book.css">
+    
+    <title>Addbook</title>
 </head>
 <body>
-<div class="container">
-        <h1 class ="my-4">Update</h1>
-        <form action="" method="post" class="form-control">
 
+    <h1>Update book details:</h1>
+
+    <label for="" class="error"><?php echo $errInfo; ?></label>
+    <form action="" method="post">
+
+        <div>
+            <label for="">Title: </label>
+            <input type="text" name="title" value="<?php echo $title?>" required >
+            <span class="error">* <?php echo $errTitle; ?></span>
             
+        </div>
 
-            <div class ="my-1">
-                <label for="" class="form-label">Name:</label>
-                <input type="text" name="name" class="form-control" placeholder="<?php echo $user_data['name']?>" id="txtEmail">
-                <span class="error">* <?php echo $errName;?></span>
-              
-            </div>
+        <div>
+            <label for="">Author: </label>
+            <input type="text" name="author" value="<?php echo $author?>">
+        </div>
 
-            <div class ="my-1">
-                <label for="" class="form-label">Username:</label>
-                <input type="text" name="username" class="form-control" placeholder="<?php echo $user_data['username']?>" id="txtEmail">
-                <span class="error">* <?php echo $errUsername;?></span>
-                
-            </div>
-           
-
-            <div class ="my-1">
-                <label for=""> Password:</label>
-                <input type="text" name="password" class="form-control" placeholder="<?php echo $user_data['password']?>" id="txtEmail">
-                <span class="error">* <?php echo $errPassword;?></span>
-                
-            </div>
-           
-            <button type="submit" class="btn btn-primary my-4">Save</button> 
-            <a href="./dash.php" class="btn btn-secondary my-4">Cancel</a> 
-            
-
-        </form>
-        
-    </div>
-
+        <div>
+            <label for="">Publisher:</label>
+            <input type="text" name="publisher" value="<?php echo $publisher?>" required>
+            <span class="error">* <?php echo $errPublisher; ?></span>
+        </div>
+        <div>
+            <label for="">Published Date: </label>
+            <input type="date" name="date" value="<?php echo $date?>" required>
+            <span class="error">* <?php echo $errDate; ?></span>
+        </div>
+        <div>
+            <label for="">ISBN no:</label>
+            <input type="text" name="isbn" value="<?php echo $isbn?>" required>
+            <span class="error">* <?php echo $errIsbn; ?></span>
+        </div>
+        <div>
+            <label for="">Edition no:</label>
+            <input type="number" name="edition" value="<?php echo $edition?>" required>
+            <span class="error">* <?php echo $errEdition; ?></span>
+        </div>
+        <div>
+            <label for="">No of Pages: </label>
+            <input type="number" name="pages" value="<?php echo $pages?>" required>
+            <span class="error">* <?php echo $errPages; ?></span>
+        </div>
+        <div>
+            <label for="">Price:</label>
+            <input type="number" name="price" value="<?php echo $price?>">
+        </div>
     
+
+        <div>
+            <button type="submit" name="updateBook">Update</button>
+        </div>
+        
+    </form>
+        
 </body>
 </html>
-
-
-

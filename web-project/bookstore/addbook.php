@@ -1,3 +1,6 @@
+<!-- 7. Write a server side script to store books data with following columns
+(id,title,publisher,author,edition,no_of_page,price,publish_date,isbn) . -->
+
 <?php
 
 include "config.php";
@@ -58,7 +61,7 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
 
         mysqli_query($con, $query);
 
-        // header("Location: login.php");
+        header("Location: listbook.php");
         die("Book successfully added!");
     } 
     else
@@ -130,12 +133,9 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
     
 
         <div>
-            <button type="submit" name="addBook">Add book</button>
+            <button type="submit" name="addBook">Create</button>
         </div>
         
-
-
-
     </form>
         
 </body>
