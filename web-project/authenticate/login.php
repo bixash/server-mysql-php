@@ -19,7 +19,9 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
 <form method="post" action="login.php">
     <input type="text" name="username" placeholder="Username">
+    <br><br>
     <input type="password" name="password" placeholder="Password">
+    <br><br>
     <button type="submit">Login</button>
 </form>
 

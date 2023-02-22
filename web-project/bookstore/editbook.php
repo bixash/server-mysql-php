@@ -46,73 +46,65 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
         // $errInfo = "Please enter valid info!!";
 
 }
-
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="book.css">
     
-    <title>Addbook</title>
+    <title>Editbook</title>
 </head>
 <body>
 
     <h1>Update book details:</h1>
 
-    <label for="" class="error"><?php echo $errInfo; ?></label>
+    <label class="error"><?php echo $errInfo; ?></label>
     <form action="" method="post">
 
-        <div>
-            <label for="">Title: </label>
-            <input type="text" name="title" value="<?php echo $title?>" required >
-            <span class="error">* <?php echo $errTitle; ?></span>
-            
-        </div>
 
-        <div>
-            <label for="">Author: </label>
-            <input type="text" name="author" value="<?php echo $author?>">
-        </div>
+        <label>Title: </label>
+        <input type="text" name="title" value="<?php echo $title?>" required >
+        <span class="error">* <?php echo $errTitle; ?></span>
+    <br> <br>
 
-        <div>
-            <label for="">Publisher:</label>
-            <input type="text" name="publisher" value="<?php echo $publisher?>" required>
-            <span class="error">* <?php echo $errPublisher; ?></span>
-        </div>
-        <div>
-            <label for="">Published Date: </label>
-            <input type="date" name="date" value="<?php echo $date?>" required>
-            <span class="error">* <?php echo $errDate; ?></span>
-        </div>
-        <div>
-            <label for="">ISBN no:</label>
-            <input type="text" name="isbn" value="<?php echo $isbn?>" required>
-            <span class="error">* <?php echo $errIsbn; ?></span>
-        </div>
-        <div>
-            <label for="">Edition no:</label>
-            <input type="number" name="edition" value="<?php echo $edition?>" required>
-            <span class="error">* <?php echo $errEdition; ?></span>
-        </div>
-        <div>
-            <label for="">No of Pages: </label>
-            <input type="number" name="pages" value="<?php echo $pages?>" required>
-            <span class="error">* <?php echo $errPages; ?></span>
-        </div>
-        <div>
-            <label for="">Price:</label>
-            <input type="number" name="price" value="<?php echo $price?>">
-        </div>
+
+        <label>Author: </label>
+        <input type="text" name="author" value="<?php echo $author?>">
+    <br> <br>
+
+
+        <label>Publisher:</label>
+        <input type="text" name="publisher" value="<?php echo $publisher?>" required>
+        <span class="error">* <?php echo $errPublisher; ?></span>
+    <br> <br>
+
+        <label>Published Date: </label>
+        <input type="date" name="date" value="<?php echo $date?>" required>
+        <span class="error">* <?php echo $errDate; ?></span>
+    <br> <br>
+
+        <label>ISBN no:</label>
+        <input type="text" name="isbn" value="<?php echo $isbn?>" required>
+        <span class="error">* <?php echo $errIsbn; ?></span>
+    <br> <br>
+
+        <label>Edition no:</label>
+        <input type="number" name="edition" value="<?php echo $edition?>" required>
+        <span class="error">* <?php echo $errEdition; ?></span>
+    <br> <br>
+
+        <label>No of Pages: </label>
+        <input type="number" name="pages" value="<?php echo $pages?>" required>
+        <span class="error">* <?php echo $errPages; ?></span>
+    <br> <br>
+
+        <label>Price:</label>
+        <input type="number" name="price" value="<?php echo $price?>">
+    <br> <br>
     
-
-        <div>
-            <button type="submit" name="updateBook">Update</button>
-        </div>
+        <button type="submit" name="updateBook">Update</button>
+    <br> <br>
         
     </form>
         

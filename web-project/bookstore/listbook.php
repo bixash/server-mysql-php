@@ -20,9 +20,6 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./book.css">
     <style>
         table {
@@ -41,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
 
     <h1>List of books</h1>
 
-    <label for="" class="error"><?php echo $errInfo; ?></label>
+    <label class="error"><?php echo $errInfo; ?></label>
     <form action="" method="post">
 
         <table>
@@ -80,18 +77,18 @@ if($_SERVER['REQUEST_METHOD']=="POST") {
                         // <td>' . $id . '</td>
                         echo ' <tr>
                         
-                                <td>' . $title . '</td>
-                                <td>' . $author . '</td>
-                                <td>' . $publisher . '</td>
-                                <td>' . $date . '</td>
-                                <td>' . $isbn . '</td>
-                                <td>' . $edition . '</td>
-                                <td>' . $pages . '</td>
-                                <td>' . $price . '</td>
-                                <td><button><a href="editbook.php?update_id='.$id.'"> Update </a></button></td>
-                                <td><button><a href="delbook.php?delete_id='.$id.'"> Delete </a></button></td>
+                            <td>' . $title . '</td>
+                            <td>' . $author . '</td>
+                            <td>' . $publisher . '</td>
+                            <td>' . $date . '</td>
+                            <td>' . $isbn . '</td>
+                            <td>' . $edition . '</td>
+                            <td>' . $pages . '</td>
+                            <td>' . $price . '</td>
+                            <td><button><a href="editbook.php?update_id='.$id.'"> Update </a></button></td>
+                            <td><button><a href="delbook.php?delete_id='.$id.'"> Delete </a></button></td>
                                                                   
-                            <tr>';
+                        <tr>';
                     }
                 } else {
                     $errInfo = "No Record Found!";

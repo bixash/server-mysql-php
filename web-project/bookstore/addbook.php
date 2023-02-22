@@ -71,70 +71,61 @@ if($_SERVER['REQUEST_METHOD']== "POST") {
 
 
 ?>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="book.css">
-    
     <title>Addbook</title>
 </head>
 <body>
 
     <h1>Enter book details:</h1>
 
-    <label for="" class="error"><?php echo $errInfo; ?></label>
+    <label class="error"><?php echo $errInfo; ?></label>
+    
     <form action="" method="post">
 
-        <div>
-            <label for="">Title: </label>
-            <input type="text" name="title">
-            <span class="error">* <?php echo $errTitle; ?></span>
-            
-        </div>
 
-        <div>
-            <label for="">Author: </label>
-            <input type="text" name="author">
-        </div>
+        <label>Title: </label>
+        <input type="text" name="title">
+        <span class="error">* <?php echo $errTitle; ?></span>
+    <br><br>
 
-        <div>
-            <label for="">Publisher:</label>
-            <input type="text" name="publisher">
-            <span class="error">* <?php echo $errPublisher; ?></span>
-        </div>
-        <div>
-            <label for="">Published Date: </label>
-            <input type="date" name="date">
-            <span class="error">* <?php echo $errDate; ?></span>
-        </div>
-        <div>
-            <label for="">ISBN no:</label>
-            <input type="text" name="isbn">
-            <span class="error">* <?php echo $errIsbn; ?></span>
-        </div>
-        <div>
-            <label for="">Edition no:</label>
-            <input type="number" name="edition">
-            <span class="error">* <?php echo $errEdition; ?></span>
-        </div>
-        <div>
-            <label for="">No of Pages: </label>
-            <input type="number" name="pages">
-            <span class="error">* <?php echo $errPages; ?></span>
-        </div>
-        <div>
-            <label for="">Price:</label>
-            <input type="number" name="price">
-        </div>
-    
+        <label>Author: </label>
+        <input type="text" name="author">
+    <br><br>
 
-        <div>
-            <button type="submit" name="addBook">Create</button>
-        </div>
+
+        <label>Publisher:</label>
+        <input type="text" name="publisher">
+        <span class="error">* <?php echo $errPublisher; ?></span>
+    <br><br>
+
+        <label>Published Date: </label>
+        <input type="date" name="date">
+        <span class="error">* <?php echo $errDate; ?></span>
+    <br><br>
+
+        <label>ISBN no:</label>
+        <input type="text" name="isbn">
+        <span class="error">* <?php echo $errIsbn; ?></span>
+    <br><br>
+
+        <label>Edition no:</label>
+        <input type="number" name="edition">
+        <span class="error">* <?php echo $errEdition; ?></span>
+    <br><br>
+
+        <label>No of Pages: </label>
+        <input type="number" name="pages">
+        <span class="error">* <?php echo $errPages; ?></span>
+    <br><br>
+
+        <label>Price:</label>
+        <input type="number" name="price">
+    <br><br>
+
+        <button type="submit" name="addBook">Create</button>
+    <br><br>
         
     </form>
         
