@@ -5,7 +5,18 @@ question no 2. -->
 
 
 session_start();
-include "config.php";
+
+$dbuser = "root";
+$dbpass = "";
+$dbname = "projects";
+$dbhost = "localhost";
+
+$conn = mysqli_connect($dbhost,$dbuser,$dbpass,$dbname);
+
+if(!$conn)
+{
+    die("Failed to connect!");
+}
 
 
 $errInfo = $errEmail = $errPassword = "";
@@ -91,28 +102,26 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <h1>Login</h1>
 
     
-    <label for="" class="error"><?php echo $errInfo; ?></label>
+    <label class="error"><?php echo $errInfo; ?></label>
     
     <form action="" method="post">
 
-
-        <div>
-            <label for="">Email:</label>
+        
+            <label>Email:</label>
             <input type="email" name="email">
             <span class="error"><?php echo $errEmail; ?></span>
-        </div>
+            <br><br>
 
-        <div>
-            <label for="">Password:</label>
+            <label>Password:</label>
             <input type="password" name="password">
             <span class="error"><?php echo $errPassword; ?></span>
-        </div>
+            <br><br>
         
 
-        <div>
+        
             <button type="submit" name="login">Login</button>
             <button type="submit" name="signup" >Sign up</button>
-        </div>
+            <br><br>
         
         
 
