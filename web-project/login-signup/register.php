@@ -28,47 +28,47 @@ and faculty and validate, store into database project table registrations. -->
     <h1>Register</h1>
 
 
-    <label for="" class="error"><?php echo $errInfo; ?></label>
+    <label class="error"><?php echo $errInfo; ?></label>
     <form action="" method="post">
 
-        <div>
-            <label for="">Name: </label>
+        
+            <label>Name: </label>
             <input type="text" name="name">
             <span class="error">* <?php echo $errName; ?></span>
+            <br><br>
+       
 
-        </div>
-
-        <div>
-            <label for="">Email:</label>
+       
+            <label>Email:</label>
             <input type="email" name="email">
             <span class="error">* <?php echo $errEmail; ?></span>
-        </div>
+            <br><br>
 
-        <div>
-            <label for="">Create Password:</label>
+       
+            <label>Create Password:</label>
             <input type="password" name="password">
             <span class="error">* <?php echo $errPassword; ?></span>
-        </div>
-        <div>
-            <label for="">Phone:</label>
+            <br><br>
+       
+            <label>Phone:</label>
             <input type="phone" name="phone">
             <!-- <span class="error">* <?php echo $errPhone; ?></span> -->
-        </div>
+            <br><br>
 
-        <div>
-            <label for="">Gender:</label>
+       
+            <label>Gender:</label>
 
             <input type="radio" name="gender" value="male" checked>
-            <label for="">Male</label>
+            <label>Male</label>
 
             <input type="radio" name="gender" value="female">
-            <label for="">Female</label>
+            <label>Female</label>
 
             <span class="error">* <?php echo $errGender; ?></span>
-        </div>
+            <br><br>
 
-        <div>
-            <label for="">Faculty</label>
+       
+            <label>Faculty</label>
             <select name="faculty">
                 <option value="" selected hidden>Select your faculty</option>
                 <option value="humanities">Humanities</option>
@@ -76,11 +76,11 @@ and faculty and validate, store into database project table registrations. -->
                 <option value="engineering">Engineering</option>
             </select>
             <span class="error">* <?php echo $errFaculty; ?></span>
-        </div>
+            <br><br>
 
-        <div>
+       
             <button type="submit" name="register">Register</button>
-        </div>
+        
         
 
 

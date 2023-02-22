@@ -4,8 +4,8 @@ and calculate simple and compound interest based on the button click. -->
 <?php
 
 
-include "config.php";
-session_start();
+// include "config.php";
+// session_start();
 
 
 $result = "";
@@ -62,25 +62,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     <form action="" method="post">
 
-        <div>
+        
             <label for="">Principal:</label>
             <input type="number" name="principal">
-        </div>
-        <div>
+            <br><br>
+       
             <label for="">Rate:</label>
             <input type="number" name="rate">
-
-        </div>
-        <div>
+            <br><br>
+      
+      
             <label for="">Time:</label>
             <input type="number" name="time">
-
-        </div>
-
-        <div>
+            <br><br>
+        
             <label for="">Interest:</label>
             <label for=""><?php echo $result ?></label>
-        </div>
+            <br><br>
 
         <button type="submit" name="simple">Simple Interest</button>
         <button type="submit" name="compound">Compound Interest</button>
